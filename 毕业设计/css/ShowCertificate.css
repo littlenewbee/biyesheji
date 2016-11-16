@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+.info {
+    border-collapse: collapse;
+    border-spacing: 0;
+	width:300px;
+	margin:30px auto;
+	font-weight:400;
+}
+.info td {
+	max-width:50%;
+    padding: 10px;
+    text-align: center;  
+    font-size: 1.5em;
+}
+.info tr {
+	color:#fff;
+	line-height: 50px;
+}

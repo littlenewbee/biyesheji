@@ -1,0 +1,39 @@
+/**
+ * 
+ */
+$(function(){
+	$(".submit").click(function(){
+		if($("input:eq(0)").val()!="" && $(".combo-value").val()!="")
+		{
+			if(checkTime($(".combo-value").val()))
+			{
+				$("form").submit();
+			}
+			else
+			{
+				alert("日期必须是以前的日期");
+			}
+		}
+		else
+		{
+			alert("不允许有空选项");
+		}
+	});
+	$(".combo").height(28);
+	$(".combo-text").height(28);
+	$(".num").focusout(function(){
+		$.ajax({
+			url:"/毕业设计/checkDepartment",//
+			data:{employeeNum:$(".num").val()},
+			success:function(data)
+			{
+				if(!(data=="技术部"))
+				{
+					alert("该员工不属于技术部,请填入正确的员工号");
+					$(".num").focus();
+				}
+			}
+		});
+		
+	});
+});

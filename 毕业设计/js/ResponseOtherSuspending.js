@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+$(function()
+{
+	$(".refuse").click(function(){
+		window.location.href="/毕业设计/refuseOtherSuspending?num="+num;
+	});
+	$(".agree").click(function()
+	{
+		$(".cont1").addClass("cont").css({left:"500px",top:"350px",opacity:1});
+	});
+	$(".qingkong").click(function()
+	{
+		$(".t1").val("");
+		$(".t2").val("");
+	});
+	$(".tijiao").click(function(){
+		if($(".t1").val()!="")
+		{
+			$("form").submit();
+		}
+		else
+		{
+			alert("请填写好空缺数据");
+		}
+	});
+});

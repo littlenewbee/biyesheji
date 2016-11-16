@@ -1,0 +1,39 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<title></title> 
+<link type="text/css" rel="stylesheet" href="../css/test.css"> 
+</head> 
+<body> 
+<header>
+	<div class="header">
+		<a class="firstPage" href="/毕业设计/jsp/Main.jsp">返回首页</a>
+		<span class="title_con">入职管理</span>
+		<span class="title_con1">欢迎     ${precord.employeeName } </span>
+		<a class="logout" href="/毕业设计/login/login.html">LogOut</a>
+	</div>
+</header>
+<div class="tips">请正确填写好入职人员的相关信息</div>
+<form action="" method="get" >
+<div class="con_input">
+	<span>员工工号：</span><input type="text" name="employeeNum"/><br>
+</div>
+<div class="con_input">
+	<span>员工姓名：</span><input type="text" name="employeeName"/><br>
+</div>
+<div class="con_input">
+	<span>入职日期：</span><input type="text" name="entryTime"/><br>
+</div>
+<div class="con_input">
+	<span>职&nbsp;&nbsp;务：</span><input type="text" name="duty"/><br>
+</div>
+<div class="con_input">
+	<span>所属部门：</span><input type="text" name="department"/><br>
+</div>
+
+	<input type="submit" class="submit" value="提交"/><input type="button" class="giveup" value="放弃提交"/>
+
+
+</form>
+</body>
+</html>

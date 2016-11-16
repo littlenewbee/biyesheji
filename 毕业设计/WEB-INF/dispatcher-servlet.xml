@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://www.springframework.org/schema/beans" 
+xmlns:aop="http://www.springframework.org/schema/aop" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:tx="http://www.springframework.org/schema/tx" 
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+xsi:schemaLocation="http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop.xsd   
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd   
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd      
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+">
+<context:component-scan base-package="login,exception,entryProcess,check,awardManagement,awardProcess,chargeManagement,dismissionManagement,dismissionProcess,employeeInfoManagement,javabean,punishmentProcess,securities,
+updateInfo,entryManagement,otherSuspending,suspending,precordManagement,certificateManagement,deletePrecord,dutyManagement,punishmentManagement,suspendingDetail,,suspendingRespose,uploadOtherSuspending">
+<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
+<mvc:default-servlet-handler/>
+<mvc:annotation-driven conversion-service="conversion"></mvc:annotation-driven>
+<bean id="conversion" class="org.springframework.context.support.ConversionServiceFactoryBean">
+</bean> 
+<bean id="view" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix">
+		<value>/jsp/</value>
+	</property>
+	<property name="suffix">
+		<value>.jsp</value>
+	</property>
+</bean>
+<bean id="simpleMappingExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	<property name="exceptionMappings">
+		<props>
+			<prop key="exception.ErrorDeleteException">ErrorDelete</prop>
+			<prop key="exception.ErrorExportException">ErrorExport</prop>
+		</props>
+	</property>
+</bean> 
+
+</beans>

@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+$(function(){
+	$(".select").click(function(){
+		if($(".text").val()=="")
+		{
+			alert("请输入要查询的员工号");
+		}
+		else
+		{
+			$.ajax({
+				url:"/毕业设计/checkPassword",
+				data:{employeeNum:$(".text").val()},
+				success:function(data)
+				{
+					$(".result").html(data);
+				}
+			});
+		}
+	});
+});

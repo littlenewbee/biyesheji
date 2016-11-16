@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+body{
+	background:url(../img/body.jpg);
+	
+}
+.errorInfo{
+	font-size: 2em;
+	font-family: "微软雅黑";
+	margin-left:470px;
+	color:white;
+}
+a{
+	font-family:"微软雅黑";
+	margin-left:580px;
+	color:#7ad24a;
+	font-size: 1em;
+}

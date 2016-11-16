@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+$(function()
+{
+	$(".suspending").mouseover(function()
+	{
+		$(".suspending").addClass("suspending_hover");
+	});
+	$(".suspending").mouseout(function()
+	{
+		$(".suspending").removeClass("suspending_hover");
+	});
+	$(".otherSuspending").mouseover(function()
+			{
+				$(".otherSuspending").addClass("otherSuspending_hover");
+			});
+			$(".otherSuspending").mouseout(function()
+			{
+				$(".otherSuspending").removeClass("otherSuspending_hover");
+			});
+			$(".suspending").click(function()
+			{
+				window.location.href="/毕业设计/suspendingFirstPage?employeeNum="+employeeNum;
+			});
+			$(".otherSuspending").click(function(){
+				window.location.href="/毕业设计/otherSuspendingFirstPage?employeeNum="+employeeNum;
+			});
+});

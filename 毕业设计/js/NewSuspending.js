@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+$(function()
+{
+	$(".submit").click(function()
+	{
+		if($(".recipent").val()=="")
+		{
+			alert("请填入工号！！");
+		}
+		else
+		{
+			$("form").submit();
+		}
+		
+	});
+	$(".recipent").focusout(function()
+	{
+		$.ajax({
+			url:"/毕业设计/checkEmployee",
+			data:{employeeNum:$(".recipent").val()},
+			success:function(data)
+			{
+				if(!data)
+				{
+					alert("请输入正确的工号");
+					$(".recipent").focus();
+				}
+			}
+		});
+		$("recipent").focusin();
+	});
+});

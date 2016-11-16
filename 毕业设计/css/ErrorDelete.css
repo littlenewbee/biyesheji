@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+body{
+	margin:0 0;
+	text-align: center;
+}
+div{
+	text-align: center;
+	font-size: 25px;
+	font-weight: 400;
+	margin-top:100px;
+	color:black;
+}
+a{
+	text-decoration: none;
+	font-size: 20px;
+	color:gray;
+	font-style: oblique;
+	
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	定义动画
+*/
+	@-webkit-keyframes rock{
+		0%{transform:rotate(0deg)}
+		10%{transform:rotate(3deg)}
+		20%{transform:rotate(-3deg)}
+		30%{transform:rotate(2deg)}
+		40%{transform:rotate(-2deg)}
+		50%{transform:rotate(1deg)}
+		60%{transform:rotate(-1deg)}
+		80%{transform:rotate(0deg)}
+		100%{transform:rotate(0deg)}
+	}
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		min-width:1200px;
+		min-height:600px;
+		/* background-color: #000; */
+		-webket-font-smoothing:antialiased;
+		font-family: "sans-serif";
+		background-image: url(../img/端午节.jpg);
+	}
+	/* .main{
+		min-width:1200px;
+		min-height:665px;
+		background-image: url(../img/端午节.jpg);
+		posiion:absolute;
+		left:50%;
+		top:50%;
+		overflow:hidden;
+	} */
+	.c_zongzi_box{
+		position:absolute;
+		left:700px;
+		top:184px;
+		width:312px;
+		height:305px;
+	}
+	.c_zongzi_box_rock{
+	
+		-webkit-animation:rock 2s infinite;
+	}
+	.c_zongzi{
+		position:absolute;
+		background-image: url(../img/zz.png);
+		width:312px;
+		height:305px;
+	}
+	.c_shengzi_1{
+		width:218px;
+		height:180px;
+		background-image: url(../img/line_1.png);
+		position:absolute;
+		top:120px;
+		left:10px;
+	}
+	.c_zongzirou{
+		width:282px;
+		height:206px;
+		background-image: url(../img/zzr_1.png);
+		background-size:282px 206px;
+		z-index: 1000;
+		position:absolute;
+		top:50px;
+		left:20px;
+		display:none;
+		opacity:0;
+		transition:all 2s;
+	}
+	.c_zongziye_1{
+		width:147px;
+		height:266px;
+		background-image: url(../img/leaf_left.png);
+		/*background-size:147px 266px;*/
+		z-index: 1;
+		position:absolute;
+		top:-30px;
+		left:0px;
+		display:none;
+		opacity:0;
+		transition:all 2s;
+	}
+	.c_zongziye_2{
+		width:318px;
+		height:338px;
+		background-image: url(../img/leaf_right.png);
+		/*background-size:318px 338px;*/
+		z-index: 1001;
+		position:absolute;
+		top:-55px;
+		left:80px;
+		display:none;
+		opacity:0;
+		transition:all 2s;
+	}
+	.c_zongzi_diye{
+		width:618px;
+		height:464px;
+		background-image: url(../img/leaf_expand.png);
+		position:absolute;
+		z-index: 999;
+		left:-130px;
+		top:-30px;
+		display:none;
+		opacity:0;
+		transition:all 2s;
+	}
+	.c_zongzi_text1{
+		width:180px;
+		height:100px;
+		background-image: url(../img/t_haoyun.png);
+		position:absolute;
+		z-index: 1001;
+		top:50%;
+		left:40%;
+		margin-top:-50px;
+		margin-left:-60px; 
+		transform:scale(0.8);
+		transform-origin:center center;
+		display:none;
+		opacity:0;
+		transition:all 2s;
+	}
+	
+	.c_zongzi_text2{
+		width:180px;
+		height:100px;
+		background-image: url(../img/t_jixiang.png);
+		position:absolute;
+		z-index: 1001;
+		top:50%;
+		left:40%;
+		margin-top:-50px;
+		margin-left:-60px; 
+		transform:scale(0.8);
+		transform-origin:center center;
+		display:none;
+		opacity:0;
+		transition:all 2s;
+	}
+	.zhufuyu{
+		width:400px;
+		height:370px;
+		position:absolute;
+		/* line-height: 20px; */
+		/* font-size:14px; */
+		left:180px;
+		top:140px;
+	}
+	.caption{
+		width:400px;
+		height:240px;
+		margin-left:40px;
+		background-image: url(../img/caption.png);
+		opacity:0;
+		transition:all 2s;
+		font-family: "华文彩云";
+		font-size: 30pt;
+		line-height: 30pt;
+	}
+	.to{
+		width:400px;
+		margin-left: 40px;
+		opacity:0;
+		transition:all 2s;
+		font-family: "华文彩云";
+		font-size: 30pt;
+		line-height: 30pt;
+	}
+	.msg{
+		width:400px;
+		margin-left: 40px;
+		opacity:0;
+		transition:all 2s;
+		font-family: "华文彩云";
+		font-size: 30pt;
+		line-height: 30pt;
+	}
+	.from{
+		width:400px;
+		margin-left: 40px;
+		text-align: right;
+		opacity:0;
+		transition:all 2s;
+		font-family: "华文彩云";
+		font-size: 30pt;
+		line-height: 30pt;
+	}
+	.text_in .caption{
+		opacity:1;
+		margin-left:0px;
+		transition:all 2s;
+	}
+	.text_in .to{
+		opacity:1;
+		margin-left:0px;
+		transition:all 2s 0.5s;
+	}
+	.text_in .msg{
+		opacity:1;
+		margin-left:0px;
+		transition:all 2s 1s;
+	}
+	.text_in .from{
+		opacity:1;
+		margin-left:0px;
+		transition:all 2s 1.5s;
+	}
+</style>
+</head>
+<body>
+	
+		<div class="c_zongzi_box c_zongzi_box_rock">
+			<div class="c_zongzi"></div>
+			<div class="c_shengzi_1"></div>
+			<div class="c_zongzirou"></div>
+			<div class="c_zongziye_1"></div>
+			<div class="c_zongziye_2"></div>
+			<div class="c_zongzi_diye"></div>
+			<div class="c_zongzi_text1"></div>
+			<div class="c_zongzi_text2"></div>
+		</div>
+		<div class="zhufuyu">
+			<div class="caption"></div>
+			<div class="to">致船厂全体员工：</div>
+			<div class="msg">在端午节即将到来之际，预祝您端午节快乐！</div>
+			<div class="from">——大连造船厂</div>
+		</div>
+	
+<script type="text/javascript" src="../jquery/jquery-1.8.2.js">
+</script>
+<script type="text/javascript" >
+		function add()
+		{
+			$(".zhufuyu").addClass("text_in");
+		}
+		setTimeout("add()",1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+body{
+	background:url("../img/body.jpg");
+}
+a{
+	color:#7ad24a;
+	font-family: "微软雅黑";
+	font-size: 1.5em;
+	font-weight: 600;
+	text-decoration: none;
+	margin-left: 610px;
+	line-height: 100px;
+}
+div{
+	color:white;
+	margin-top:50px;
+	margin-left:620px;
+	font-family: "微软雅黑";
+	font-size: 2em;
+	font-weight: 600;
+}
+

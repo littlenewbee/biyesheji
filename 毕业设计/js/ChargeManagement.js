@@ -1,0 +1,76 @@
+/**
+ * 
+ */
+$(function()
+{
+	$(".combo").height(28);
+	$(".combo-text").height(28);
+	/*$("input:eq(1)").focusin(function()
+			{
+				if($("input:eq(0)").val()=="")
+				{
+					alert("不允许有空项！");	
+				}
+			});
+			$("input:eq(2)").focusin(function()
+			{
+				if($("input:eq(1)").val()=="")
+				{
+					alert("不允许有空项！");	
+				}
+			});*/
+	$(".submit").click(function()
+	{
+		if($("input:eq(0)").val()!="" && $("input:eq(1)").val()!="" && $(".combo-value").val()!="")
+		{
+			if($(".t2").val()!="")
+			{
+				if(checkTime($(".combo-value").val()))
+				{
+					$("form").submit();
+				}
+				else
+				{
+					alert("日期必须是以前的日期");
+				}
+				
+			}
+			else
+			{
+				alert("请填好相关信息");
+			}
+		}
+		else
+		{
+			alert("请填好相关信息");
+		}
+		
+	});
+	$(".num").focusout(function(){
+		$.ajax({
+			url:"/毕业设计/checkEmployee",
+			data:{employeeNum:$(".num").val()},
+			success:function(data)
+			{
+				if(!data)
+				{
+					alert("请填入正确的员工号！");
+					$(".num").focus();
+				}
+				else
+				{
+					$.ajax({
+						url:"/毕业设计/getEmployeeName",
+						data:{employeeNum:$(".num").val()},
+						success:function(data)
+						{
+							$(".name").val(data);
+						}
+					})
+				}
+			}
+		});
+	});
+			
+});
+		

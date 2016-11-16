@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+$(function()
+{
+	if(flag)
+	{
+		$(".submit").click(function()
+		{
+			if($(".answer").val()==answer)
+			{
+				window.location.href="/毕业设计/afterQuestion?employeeNum="+employeeNum;
+			}
+			else
+			{
+				alert("答案错误");
+			}
+		});
+	}
+});
